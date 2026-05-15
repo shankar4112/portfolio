@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
+// @ts-expect-error - maath does not have types
 import * as random from 'maath/random/dist/maath-random.esm';
 
 import * as THREE from 'three';
@@ -10,7 +11,7 @@ function ParticleSwarm(props: Record<string, unknown>) {
   // Create a sphere of random points
   const sphere = random.inSphere(new Float32Array(3000), { radius: 1.5 });
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (ref.current) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
