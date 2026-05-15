@@ -15,24 +15,24 @@ export default function Hero() {
             scale: { duration: 1, delay: 2.3, ease: [0.16, 1, 0.3, 1] },
             y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="relative mb-14 w-32 h-32 md:w-40 md:h-40 flex items-center justify-center mt-8 md:mt-0"
+          className="relative mb-12 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 flex items-center justify-center mt-8 md:mt-0"
         >
           {/* Outer Orbital Ring */}
           <motion.div 
             animate={{ rotate: 360 }} 
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute -inset-10 border border-white/10 rounded-full border-dashed"
+            className="absolute -inset-12 md:-inset-16 border border-white/10 rounded-full border-dashed"
           />
           {/* Inner Orbital Ring */}
           <motion.div 
             animate={{ rotate: -360 }} 
             transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute -inset-4 border border-white/20 rounded-full opacity-50"
+            className="absolute -inset-6 md:-inset-8 border border-white/20 rounded-full opacity-50"
           />
           
           {/* Avatar Container with a creative organic blob shape */}
           <div 
-            className="w-full h-full glass p-[2px] relative z-10 shadow-[0_0_30px_rgba(255,255,255,0.1)]" 
+            className="w-full h-full glass p-[2px] relative z-10 shadow-[0_0_50px_rgba(255,255,255,0.15)]" 
             style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
           >
             <img 
@@ -42,20 +42,15 @@ export default function Hero() {
               style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
             />
           </div>
-          
-          {/* Name Tag */}
-          <div className="absolute -bottom-10 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs tracking-[0.2em] uppercase text-white/70 backdrop-blur-md whitespace-nowrap">
-            Gowri Shankar V
-          </div>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2.7, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 max-w-4xl"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 max-w-4xl"
         >
-          Building <span className="text-white/40">Intelligent</span> Digital Experiences
+          Gowri <span className="text-white/40">Shankar V</span>
         </motion.h1>
 
         <motion.p
