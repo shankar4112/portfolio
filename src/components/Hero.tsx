@@ -8,13 +8,45 @@ export default function Hero() {
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+          transition={{ 
+            opacity: { duration: 1, delay: 2.3 },
+            scale: { duration: 1, delay: 2.3, ease: [0.16, 1, 0.3, 1] },
+            y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="relative mb-14 w-32 h-32 md:w-40 md:h-40 flex items-center justify-center mt-8 md:mt-0"
         >
-          <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 text-sm text-white/70 mb-6 backdrop-blur-md">
+          {/* Outer Orbital Ring */}
+          <motion.div 
+            animate={{ rotate: 360 }} 
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute -inset-10 border border-white/10 rounded-full border-dashed"
+          />
+          {/* Inner Orbital Ring */}
+          <motion.div 
+            animate={{ rotate: -360 }} 
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute -inset-4 border border-white/20 rounded-full opacity-50"
+          />
+          
+          {/* Avatar Container with a creative organic blob shape */}
+          <div 
+            className="w-full h-full glass p-[2px] relative z-10 shadow-[0_0_30px_rgba(255,255,255,0.1)]" 
+            style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
+          >
+            <img 
+              src="/16693208299.png" 
+              alt="Gowri Shankar V" 
+              className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700" 
+              style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
+            />
+          </div>
+          
+          {/* Name Tag */}
+          <div className="absolute -bottom-10 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs tracking-[0.2em] uppercase text-white/70 backdrop-blur-md whitespace-nowrap">
             Gowri Shankar V
-          </span>
+          </div>
         </motion.div>
 
         <motion.h1
