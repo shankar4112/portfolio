@@ -91,7 +91,7 @@ export default function Hero() {
               style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
             >
               <img 
-                src="/16693208299.png" 
+                src="/profile-optimized.webp" 
                 alt="Gowri Shankar V" 
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700" 
                 style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
